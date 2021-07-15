@@ -43,7 +43,7 @@ jobs:
       - name: Push to GitHub Packages
         run : |
             docker build --build-arg GIT_REPO=hnc-yusop/keycloak \
-              --build-arg GIT_BRANCH=malangmalang-provider \
+              --build-arg GIT_BRANCH=origin/malangmalang-provider \
              -t ${{ env.IMAGE_NAME }} -t ${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }} ./server
              docker push ${{ env.IMAGE_NAME }}:${{ steps.image.outputs.version }}
         #uses: docker/build-push-action@v2
